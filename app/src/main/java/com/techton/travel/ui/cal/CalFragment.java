@@ -24,14 +24,6 @@ public class CalFragment extends Fragment {
                 ViewModelProviders.of(this).get(CalViewModel.class);
         View root = inflater.inflate(R.layout.fragment_cal, container, false);
 
-        //이거 없어도 될 것 같은데
-        final TextView textView = root.findViewById(R.id.text_cal);
-        calViewModel.getText().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
         return root;
     }
 }

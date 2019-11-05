@@ -8,9 +8,16 @@
         <item name="colorAccent">@color/colorAccent</item>
         <!-- No Title Bar-->
         <item name="windowNoTitle">true</item>
-        <!-- white status bar -->
-        <item name="android:statusBarColor">#ffffff</item>
-        <item name="android:windowLightStatusBar">true</item>-
+        <!-- transparent status bar -->
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+
+        <!-- deprecated -->
+        <!--item name="android:windowDrawsSystemBarBackgrounds">true</item-->
+        <!--item name="android:statusBarColor">@android:color/transparent</item-->
     </style>
 
 </resources>
