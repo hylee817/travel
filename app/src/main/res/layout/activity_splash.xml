@@ -5,13 +5,13 @@
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".splash_screen">
+    tools:context=".SplashActivity">
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="104dp"
         android:layout_height="141dp"
-        app:srcCompat="@drawable/splash_logo"
+        android:src="@drawable/splash_logo"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"

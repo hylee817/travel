@@ -8,6 +8,9 @@
         <item name="colorAccent">@color/colorAccent</item>
         <!-- No Title Bar-->
         <item name="windowNoTitle">true</item>
+        <!-- white status bar -->
+        <item name="android:statusBarColor">#ffffff</item>
+        <item name="android:windowLightStatusBar">true</item>-
     </style>
 
 </resources>

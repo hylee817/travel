@@ -6,14 +6,14 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 
-public class splash_screen extends Activity {
+public class SplashActivity extends Activity {
     Handler handler = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d("Checker", "SplashCheck");
-        setContentView(R.layout.splash_background);
+        setContentView(R.layout.activity_splash);
 
         handler.postDelayed(new Runnable() {
             @Override
