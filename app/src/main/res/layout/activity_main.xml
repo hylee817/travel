@@ -111,7 +111,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/facebook_login" />
+            app:srcCompat="@drawable/login_facebook" />
 
         <ImageView
             android:id="@+id/imageView_naver"
@@ -121,7 +121,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView_facebook"
-            app:srcCompat="@drawable/naver_login" />
+            app:srcCompat="@drawable/login_naver" />
 
         <ImageView
             android:id="@+id/imageView_google"
@@ -131,7 +131,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView_naver"
-            app:srcCompat="@drawable/google_login" />
+            app:srcCompat="@drawable/login_google" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
