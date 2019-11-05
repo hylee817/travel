@@ -12,16 +12,16 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_navi"
-        android:name="com.techton.travel.ui.navi.NaviFragment"
-        android:label="Navi"
-        tools:layout="@layout/fragment_navi" />
+        android:id="@+id/navigation_nav"
+        android:name="com.techton.travel.ui.nav.NavFragment"
+        android:label="Nav"
+        tools:layout="@layout/fragment_nav" />
 
     <fragment
-        android:id="@+id/navigation_calendar"
-        android:name="com.techton.travel.ui.calendar.CalendarFragment"
-        android:label="Calendar"
-        tools:layout="@layout/fragment_calendar" />
+        android:id="@+id/navigation_cal"
+        android:name="com.techton.travel.ui.cal.CalFragment"
+        android:label="Cal"
+        tools:layout="@layout/fragment_cal" />
 
     <fragment
         android:id="@+id/navigation_me"

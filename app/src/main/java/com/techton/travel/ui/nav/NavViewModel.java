@@ -1,16 +1,16 @@
-package com.techton.travel.ui.navi;
+package com.techton.travel.ui.nav;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class NaviViewModel extends ViewModel {
+public class NavViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public NaviViewModel() {
+    public NavViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is dashboard fragment");
+        mText.setValue("This is Navi fragment");
     }
 
     public LiveData<String> getText() {

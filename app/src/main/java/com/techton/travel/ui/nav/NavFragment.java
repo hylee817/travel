@@ -1,4 +1,4 @@
-package com.techton.travel.ui.calendar;
+package com.techton.travel.ui.nav;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,19 +14,19 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.techton.travel.R;
 
-public class CalendarFragment extends Fragment {
+public class NavFragment extends Fragment {
 
-    private CalendarViewModel calendarViewModel;
+    private NavViewModel navViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        calendarViewModel =
-                ViewModelProviders.of(this).get(CalendarViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_calendar, container, false);
+        navViewModel =
+                ViewModelProviders.of(this).get(NavViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_nav, container, false);
 
         //이거 없어도 될 것 같은데
-        final TextView textView = root.findViewById(R.id.text_calendar);
-        calendarViewModel.getText().observe(this, new Observer<String>() {
+        final TextView textView = root.findViewById(R.id.text_nav);
+        navViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
