@@ -12,19 +12,20 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.techton.travel.ui.navigation.NavigationFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_navigation" />
+        android:id="@+id/navigation_navi"
+        android:name="com.techton.travel.ui.navi.NaviFragment"
+        android:label="Navi"
+        tools:layout="@layout/fragment_navi" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_calendar"
         android:name="com.techton.travel.ui.calendar.CalendarFragment"
-        android:label="@string/title_notifications"
+        android:label="Calendar"
         tools:layout="@layout/fragment_calendar" />
 
     <fragment
         android:id="@+id/navigation_me"
-        android:name="com.techton.travel.ui.calendar."
-        />
+        android:name="com.techton.travel.ui.me.MeFragment"
+        android:label="Me"
+        tools:layout="@layout/fragment_me" />
 </navigation>

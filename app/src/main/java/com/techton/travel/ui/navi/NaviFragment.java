@@ -1,4 +1,4 @@
-package com.techton.travel.ui.navigation;
+package com.techton.travel.ui.navi;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,19 +14,19 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.techton.travel.R;
 
-public class NavigationFragment extends Fragment {
+public class NaviFragment extends Fragment {
 
-    private NavigationViewModel navigationViewModel;
+    private NaviViewModel naviViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        navigationViewModel =
-                ViewModelProviders.of(this).get(NavigationViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_navigation, container, false);
+        naviViewModel =
+                ViewModelProviders.of(this).get(NaviViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_navi, container, false);
 
         //이거 없어도 될 것 같은데
-        final TextView textView = root.findViewById(R.id.text_navigation);
-        navigationViewModel.getText().observe(this, new Observer<String>() {
+        final TextView textView = root.findViewById(R.id.text_navi);
+        naviViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
