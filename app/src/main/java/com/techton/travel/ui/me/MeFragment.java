@@ -24,14 +24,6 @@ public class MeFragment extends Fragment {
                 ViewModelProviders.of(this).get(MeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_me, container, false);
 
-        //이거 없어도 될 것 같은데
-        final TextView textView = root.findViewById(R.id.text_me);
-        meViewModel.getText().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
         return root;
     }
 }
