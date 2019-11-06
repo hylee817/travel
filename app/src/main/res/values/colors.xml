@@ -3,4 +3,8 @@
     <color name="colorPrimary">#A493FF</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#A493FF</color>
+    <color name="coolGray">#BCC5D3</color>
+    <color name="darkBlack">#373737</color>
+    <color name="grad_Blue">#9ACDFF</color>
+    <color name="grad_Purple">#A493FF</color>
 </resources>
