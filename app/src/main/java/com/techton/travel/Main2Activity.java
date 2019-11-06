@@ -15,6 +15,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 public class Main2Activity extends AppCompatActivity {
+    NavController navController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,10 +31,12 @@ public class Main2Activity extends AppCompatActivity {
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.navigation_home, R.id.navigation_nav, R.id.navigation_cal, R.id.navigation_me)
                 .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        //Title바 제거하면서 지웠음
-        //NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+        navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupWithNavController(navView, navController);
-        //default로 생성된 부분
+        navView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            }
+        });
     }
 }

@@ -13,9 +13,11 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.navigation.NavController;
 
 import com.techton.travel.Main2Activity;
 import com.techton.travel.R;
+import com.techton.travel.ui.search.SearchFragment;
 
 public class HomeFragment extends Fragment {
 
@@ -33,6 +35,7 @@ public class HomeFragment extends Fragment {
             public void onClick(View v){
                 Toast toast = Toast.makeText(getActivity(), "temp", Toast.LENGTH_SHORT);
                 toast.show();
+                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.container,new SearchFragment()).addToBackStack(null).commit();
             }
         });
 
