@@ -18,30 +18,107 @@
                android:background="#00ffffff"
                android:scaleType="fitXY"
                />
-           <ImageView
-               android:id="@+id/home_main_img"
+           <FrameLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content">
+               <ImageView
+                   android:id="@+id/home_main_img"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:src="@drawable/home_p_1"
+                   android:tint="#55000000"
+                   android:scaleType="fitXY"
+                   />
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:orientation="horizontal"
+                   android:paddingLeft="20dp"
+                   android:paddingRight="20dp"
+                   android:alpha="0.5">
+                   <ImageButton
+                       android:layout_width="0dp"
+                       android:layout_height="match_parent"
+                       android:layout_weight="1"
+                       android:background="@android:color/transparent"
+                       android:src="@drawable/home_arrow_left"/>
+                   <TextView
+                       android:layout_width="0dp"
+                       android:layout_height="match_parent"
+                       android:gravity="center"
+                       android:textSize="18sp"
+                       android:text="제주도\n\n새별오름 억새보기 좋은 날"
+                       android:textColor="@android:color/white"
+                       android:layout_weight="12"/>
+                   <ImageButton
+                       android:layout_width="0dp"
+                       android:layout_height="match_parent"
+                       android:layout_weight="1"
+                       android:background="@android:color/transparent"
+                       android:src="@drawable/home_arrow_right"/>
+               </LinearLayout>
+               <LinearLayout
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="center_horizontal|bottom"
+                   android:paddingBottom="10dp">
+                   <ImageView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:src="@drawable/home_star_color"
+                       android:layout_margin="3dp"/>
+                   <ImageView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:src="@drawable/home_star_gray"
+                       android:layout_margin="3dp"/>
+                   <ImageView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:src="@drawable/home_star_gray"
+                       android:layout_margin="3dp"/>
+                   <ImageView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:src="@drawable/home_star_gray"
+                       android:layout_margin="3dp"/>
+                   <ImageView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:src="@drawable/home_star_gray"
+                       android:layout_margin="3dp"/>
+               </LinearLayout>
+           </FrameLayout>
+           <FrameLayout
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
-               android:src="@drawable/home_p_1"
-               android:tint="#55000000"
-               android:scaleType="fitXY"
-               />
-           <ImageView
-               android:id="@+id/home_search"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:src="@drawable/home_search"
-               android:scaleType="center"
-               />
+               android:padding="20dp">
+               <ImageButton
+                   android:id="@+id/home_search"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:src="@drawable/home_search"
+                   android:background="@android:color/transparent"
+                   android:scaleType="center"
+                   />
+           </FrameLayout>
            <LinearLayout
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
-               android:orientation="horizontal">
+               android:orientation="horizontal"
+               android:paddingTop="5dp"
+               android:paddingBottom="25dp">
+               <Space
+                   android:layout_width="0dp"
+                   android:layout_height="match_parent"
+                   android:layout_weight="0.5"/>
                <TextView
                    android:layout_width="0dp"
                    android:layout_height="match_parent"
-                   android:layout_weight="2"
+                   android:layout_weight="3"
                    android:gravity="center"
+                   android:textColor="@android:color/black"
+                   android:textSize="20sp"
                    android:text="11월 8일"/>
                <ImageView
                    android:layout_width="0dp"
@@ -51,14 +128,25 @@
                <ImageView
                    android:layout_width="0dp"
                    android:layout_height="match_parent"
+                   android:layout_weight="0.5"
+                   android:src="@drawable/home_cute_line"/>
+               <ImageView
+                   android:layout_width="0dp"
+                   android:layout_height="match_parent"
                    android:layout_weight="1"
                    android:src="@drawable/home_rain_icon"/>
                <TextView
                    android:layout_width="0dp"
                    android:layout_height="match_parent"
-                   android:layout_weight="2"
+                   android:layout_weight="3"
+                   android:textColor="@android:color/black"
+                   android:textSize="20sp"
                    android:gravity="center"
                    android:text="7\u2103/15\u2103"/>
+               <Space
+                   android:layout_width="0dp"
+                   android:layout_height="match_parent"
+                   android:layout_weight="0.5"/>
            </LinearLayout>
            <ImageView
                android:layout_width="match_parent"
@@ -68,53 +156,69 @@
            <LinearLayout
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
-               android:orientation="horizontal">
+               android:orientation="horizontal"
+               android:padding="20dp">
                <ImageView
                    android:layout_width="0dp"
                    android:layout_height="match_parent"
                    android:layout_weight="1"
+                   android:scaleType="center"
                    android:src="@drawable/home_ginkgo_icon"/>
                <TextView
                    android:layout_width="0dp"
                    android:layout_height="match_parent"
-                   android:layout_weight="2"
+                   android:layout_weight="5"
                    android:gravity="center"
-                   android:text="가을의 신선함을 느끼고 싶을 때"/>
+                   android:textColor="@android:color/black"
+                   android:textSize="20sp"
+                   android:text="가을의 신선함을 느끼고 싶을때"/>
                <ImageView
                    android:layout_width="0dp"
                    android:layout_height="match_parent"
                    android:layout_weight="1"
+                   android:scaleType="center"
                    android:src="@drawable/home_maple_icon"/>
            </LinearLayout>
            <LinearLayout
-               android:layout_width="match_parent"
+               android:layout_width="wrap_content"
                android:layout_height="wrap_content"
+               android:paddingLeft="20dp"
+               android:paddingRight="20dp"
+               android:layout_gravity="center_horizontal"
                android:orientation="horizontal">
                <ImageView
-                   android:layout_width="0dp"
-                   android:layout_height="match_parent"
-                   android:layout_weight="1"
+                   android:layout_width="170dp"
+                   android:layout_height="170dp"
                    android:src="@drawable/home_p_2"/>
+               <Space
+                   android:layout_width="20dp"
+                   android:layout_height="match_parent"/>
                <ImageView
-                   android:layout_width="0dp"
-                   android:layout_height="match_parent"
-                   android:layout_weight="1"
+                   android:layout_width="170dp"
+                   android:layout_height="170dp"
                    android:src="@drawable/home_p_3"/>
            </LinearLayout>
+           <Space
+               android:layout_height="20dp"
+               android:layout_width="match_parent"/>
            <LinearLayout
-               android:layout_width="match_parent"
+               android:layout_width="wrap_content"
                android:layout_height="wrap_content"
+               android:paddingLeft="20dp"
+               android:paddingRight="20dp"
+               android:layout_gravity="center_horizontal"
                android:orientation="horizontal">
                <ImageView
-                   android:layout_width="0dp"
-                   android:layout_height="match_parent"
-                   android:layout_weight="1"
+                   android:layout_width="170dp"
+                   android:layout_height="170dp"
                    android:src="@drawable/home_p_4"/>
+               <Space
+                   android:layout_width="20dp"
+                   android:layout_height="match_parent"/>
                <ImageView
-                   android:layout_width="0dp"
-                   android:layout_height="match_parent"
-                   android:layout_weight="1"
-                   android:src="@drawable/home_p_4"/>
+                   android:layout_width="170dp"
+                   android:layout_height="170dp"
+                   android:src="@drawable/home_p_5"/>
            </LinearLayout>
        </LinearLayout>
 
@@ -128,6 +232,7 @@
            />
 
        <ImageView
+           android:paddingTop="55dp"
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
            android:layout_weight="1"

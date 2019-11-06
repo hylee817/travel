@@ -18,6 +18,9 @@
         android:usesCleartextTraffic="true">
 
         <meta-data
+            android:name="com.naver.maps.map.CLIENT_ID"
+            android:value="j4mw6u378t" />
+        <meta-data
             android:name="com.kakao.sdk.AppKey"
             android:value="178955c139c4df3a8a029b9d610f37a2"/>
 
