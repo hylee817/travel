@@ -33,8 +33,6 @@ public class HomeFragment extends Fragment {
         searchButton.setOnClickListener(new ImageButton.OnClickListener(){
             @Override
             public void onClick(View v){
-                Toast toast = Toast.makeText(getActivity(), "temp", Toast.LENGTH_SHORT);
-                toast.show();
                 getActivity().getSupportFragmentManager().beginTransaction().add(R.id.container,new SearchFragment()).addToBackStack(null).commit();
             }
         });

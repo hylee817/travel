@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
@@ -23,6 +24,9 @@ public class NavFragment extends Fragment {
         navViewModel =
                 ViewModelProviders.of(this).get(NavViewModel.class);
         View root = inflater.inflate(R.layout.fragment_nav, container, false);
+
+        Fragment fragment = getActivity().getSupportFragmentManager().findFragmentById(R.id.container);
+        getActivity().getSupportFragmentManager().beginTransaction().remove(fragment).commit();
 
         return root;
     }
