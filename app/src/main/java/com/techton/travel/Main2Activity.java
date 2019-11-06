@@ -26,7 +26,7 @@ public class Main2Activity extends AppCompatActivity {
                 View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each menu should be considered as top level destinations.
+        // Passing each menu ID as a set of Ids because each menu should be considered as me_top level destinations.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.navigation_home, R.id.navigation_nav, R.id.navigation_cal, R.id.navigation_me)
                 .build();
