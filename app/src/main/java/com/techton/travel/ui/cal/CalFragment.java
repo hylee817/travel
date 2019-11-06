@@ -45,13 +45,6 @@ public class CalFragment extends Fragment {
                 ViewModelProviders.of(this).get(CalViewModel.class);
         View root = inflater.inflate(R.layout.fragment_cal, container, false);
 
-        mapView = new MapView(getActivity());
-        ViewGroup mapViewContainer =  (ViewGroup) root.findViewById(R.id.mapview_container);
-        mapViewContainer.addView(mapView);
-        //mapview xml말고 코드로 추가해줘야 함
-
-        ////////////////////////mapview////////////////////////
-
         items = new ArrayList<CalItem>();
         recyclerView = root.findViewById(R.id.recyclerView);
         adapter = new CalAdapter(items);  //생성자로

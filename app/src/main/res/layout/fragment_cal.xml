@@ -48,12 +48,10 @@
             />
     </FrameLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/mapview_container"
-        android:layout_width="match_parent"
-        android:layout_height="300dp">
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <fragment android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:id="@+id/map"
+        android:name="com.naver.maps.map.MapFragment" />
 
     <ScrollView
         android:layout_width="match_parent"
