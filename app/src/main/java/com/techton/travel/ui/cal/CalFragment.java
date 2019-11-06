@@ -15,6 +15,9 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.naver.maps.geometry.LatLng;
+import com.naver.maps.map.NaverMap;
+import com.naver.maps.map.overlay.Marker;
 import com.techton.travel.R;
 
 import net.daum.mf.map.api.MapView;
@@ -25,7 +28,7 @@ import java.util.Map;
 public class CalFragment extends Fragment {
 
     private CalViewModel calViewModel;
-    private MapView mapView;
+    NaverMap naverMap;
 
     String name1 = "고지대그린테마공원";
     String name2 = "동백공원";
@@ -60,6 +63,15 @@ public class CalFragment extends Fragment {
         adapter.addItem(item2);
         adapter.addItem(item3);
         recyclerView.getAdapter().notifyDataSetChanged();;
+        //리스트에 추가
+
+        //naverMap = root.findFragmentById(R.id.map);
+        Marker marker = new Marker();
+        marker.setPosition(new LatLng(129.038462,35.1322508));
+        //marker.setPosition(new LatLng());
+        marker.setPosition(new LatLng(129.087973,35.0554585));
+        marker.setMap(naverMap);
+        //지도에 마커 표시
 
         return root;
     }
