@@ -49,39 +49,60 @@
         android:id="@+id/ConstraintLayout2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:orientation="vertical"
-        android:layout_weight="2">
+        android:layout_weight="3"
+        android:orientation="vertical">
 
         <EditText
             android:id="@+id/editText_name"
             android:layout_width="300dp"
             android:layout_height="60dp"
+            android:layout_gravity="center"
             android:drawableLeft="@drawable/human_w"
             android:drawablePadding="20dp"
-            android:paddingBottom="20dp"
             android:hint="이름"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp"
+            android:paddingBottom="20dp"
             android:text="John Doe"
-            android:layout_gravity="center"/>
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/editText_password"
             android:layout_width="300dp"
             android:layout_height="60dp"
+            android:layout_gravity="center"
             android:drawableLeft="@drawable/lock_w"
             android:drawablePadding="20dp"
-            android:paddingBottom="20dp"
             android:hint="비밀번호"
-            android:textColor="#FFFFFF"
-            android:textSize="25sp"
+            android:paddingBottom="20dp"
             android:text="•••••••"
-            android:layout_gravity="center"/>
+            android:textColor="#FFFFFF"
+            android:textSize="25sp" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <FrameLayout
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"></LinearLayout>
+            android:layout_gravity="center_horizontal">
+
+            <CheckBox
+                android:id="@+id/checkBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|left"
+                android:buttonTint="#FFFFFF"
+                android:text="로그인 기억하기"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/button_signin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|right"
+                android:background="@android:color/transparent"
+                android:text="회원가입"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp" />
+        </FrameLayout>
 
         <FrameLayout
             android:layout_width="match_parent"
