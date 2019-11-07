@@ -81,12 +81,13 @@
                     android:background="@android:color/transparent"
                     />
             </FrameLayout>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#BCC5D3" />
         </LinearLayout>
     </ScrollView>
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:background="#BCC5D3"/>
+
 
 </LinearLayout>
