@@ -1,8 +1,7 @@
-package com.techton.travel.ui.search;
+package com.techton.travel.ui.type;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,23 +15,20 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.techton.travel.R;
-import com.techton.travel.ui.home.HomeFragment;
-import com.techton.travel.ui.home.HomeViewModel;
 import com.techton.travel.ui.result.ResultFragment;
 
-public class SearchFragment  extends Fragment {
+public class TypeFragment extends Fragment {
 
-    private SearchViewModel searchViewModel;
+    private TypeViewModel typeViewModel;
     private EditText editText;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        searchViewModel =
-                ViewModelProviders.of(this).get(SearchViewModel.class);
+        typeViewModel =
+                ViewModelProviders.of(this).get(TypeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_search, container, false);
 
         ImageButton backButton = root.findViewById(R.id.search_back_btn);
@@ -75,10 +71,6 @@ public class SearchFragment  extends Fragment {
                 switch (i) {
                     // Search 버튼일경우
                     case EditorInfo.IME_ACTION_SEARCH:
-                        //키보드 보이게 하는 부분
-                        InputMethodManager imm = (InputMethodManager)getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
-                        imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY,0);
-
                         Fragment fragment = getActivity().getSupportFragmentManager().findFragmentById(R.id.container);
                         getActivity().getSupportFragmentManager().beginTransaction().add(R.id.container,new ResultFragment()).addToBackStack(null).commit();
 
