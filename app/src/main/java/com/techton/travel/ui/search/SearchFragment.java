@@ -1,5 +1,6 @@
 package com.techton.travel.ui.search;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -7,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -14,15 +16,18 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.techton.travel.R;
 import com.techton.travel.ui.home.HomeFragment;
 import com.techton.travel.ui.home.HomeViewModel;
+import com.techton.travel.ui.result.ResultFragment;
 
 public class SearchFragment  extends Fragment {
 
     private SearchViewModel searchViewModel;
+    private EditText editText;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -30,14 +35,21 @@ public class SearchFragment  extends Fragment {
                 ViewModelProviders.of(this).get(SearchViewModel.class);
         View root = inflater.inflate(R.layout.fragment_search, container, false);
 
-        ImageButton searchButton = root.findViewById(R.id.search_back_btn);
-        searchButton.setOnClickListener(new ImageButton.OnClickListener(){
+        ImageButton backButton = root.findViewById(R.id.search_back_btn);
+        backButton.setOnClickListener(new ImageButton.OnClickListener(){
             @Override
             public void onClick(View v){
                 Fragment fragment = getActivity().getSupportFragmentManager().findFragmentById(R.id.container);
                 getActivity().getSupportFragmentManager().beginTransaction().remove(fragment).commit();
             }
         });
+
+        editText = (EditText) root.findViewById(R.id.edittext_search_region);
+        editText.requestFocus();
+
+        //키보드 보이게 하는 부분
+        InputMethodManager imm = (InputMethodManager)getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
 
         EditText editText = root.findViewById(R.id.edittext_search_region);editText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             // TODO : keypad 에서 enter 실행시 Listen하고 동작할 액션을 작성
@@ -63,7 +75,9 @@ public class SearchFragment  extends Fragment {
                 switch (i) {
                     // Search 버튼일경우
                     case EditorInfo.IME_ACTION_SEARCH:
-                        getActivity().getSupportFragmentManager().beginTransaction().add(R.id.container,new SearchFragment()).addToBackStack(null).commit();
+                        Fragment fragment = getActivity().getSupportFragmentManager().findFragmentById(R.id.container);
+                        getActivity().getSupportFragmentManager().beginTransaction().add(R.id.container,new ResultFragment()).addToBackStack(null).commit();
+
                         break;
 
                     // Enter 버튼일경우

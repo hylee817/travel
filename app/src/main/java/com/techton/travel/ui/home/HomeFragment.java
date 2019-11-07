@@ -33,7 +33,8 @@ public class HomeFragment extends Fragment {
         searchButton.setOnClickListener(new ImageButton.OnClickListener(){
             @Override
             public void onClick(View v){
-                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.container,new SearchFragment()).addToBackStack(null).commit();
+                SearchFragment searchFragment = new SearchFragment();
+                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.container,searchFragment).addToBackStack(null).commit();
             }
         });
 
