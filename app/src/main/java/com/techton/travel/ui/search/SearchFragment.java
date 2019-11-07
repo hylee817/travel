@@ -18,6 +18,8 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import com.techton.travel.R;
 import com.techton.travel.ui.home.HomeFragment;
@@ -79,9 +81,8 @@ public class SearchFragment  extends Fragment {
                         InputMethodManager imm = (InputMethodManager)getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
                         imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY,0);
 
-                        Fragment fragment = getActivity().getSupportFragmentManager().findFragmentById(R.id.container);
-                        getActivity().getSupportFragmentManager().beginTransaction().add(R.id.container,new ResultFragment()).addToBackStack(null).commit();
-
+                        NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment);
+                        navController.navigate(R.id.action_navigation_search_to_navigation_result);
                         break;
 
                     // Enter 버튼일경우

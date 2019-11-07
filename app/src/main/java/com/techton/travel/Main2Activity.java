@@ -1,5 +1,6 @@
 package com.techton.travel;
 
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
@@ -25,6 +26,7 @@ import androidx.navigation.ui.NavigationUI;
 
 public class Main2Activity extends AppCompatActivity{
     NavController navController;
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +37,11 @@ public class Main2Activity extends AppCompatActivity{
         getWindow().getDecorView().setSystemUiVisibility(
                 View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
 
+        //저장된 값을 불러오기 위해 같은 네임파일을 찾음.
+        sharedPreferences = getSharedPreferences("sFile",0);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt("depth",0).apply();
+
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each menu should be considered as me_top level destinations.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
@@ -42,16 +49,5 @@ public class Main2Activity extends AppCompatActivity{
                 .build();
         navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupWithNavController(navView, navController);
-
-        // fragment stack 관련
-        navController.addOnDestinationChangedListener(new NavController.OnDestinationChangedListener() {
-            @Override
-            public void onDestinationChanged(@NonNull NavController controller, @NonNull NavDestination destination, @Nullable Bundle arguments) {
-                Toast toast = Toast.makeText(getApplicationContext(), destination.getLabel(), Toast.LENGTH_SHORT);
-                toast.show(); //디버깅용
-                navController.saveState();
-            }
-        });
-
     }
 }

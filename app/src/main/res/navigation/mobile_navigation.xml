@@ -9,7 +9,12 @@
         android:id="@+id/navigation_home"
         android:name="com.techton.travel.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_search"
+            app:destination="@id/navigation_search"
+            app:launchSingleTop="false" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_nav"
@@ -32,5 +37,27 @@
         android:id="@+id/navigation_search"
         android:name="com.techton.travel.ui.search.SearchFragment"
         android:label="@string/title_search"
-        tools:layout="@layout/fragment_search" />
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_navigation_search_to_navigation_result"
+            app:destination="@+id/navigation_result" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_result"
+        android:name="com.techton.travel.ui.result.ResultFragment"
+        android:label="Result"
+        tools:layout="@layout/fragment_result" >
+        <action
+            android:id="@+id/action_navigation_result_to_navigation_detail"
+            app:destination="@id/navigation_detail"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_detail"
+        android:name="com.techton.travel.ui.detail.DetailFragment"
+        android:label="Detail"
+        tools:layout="@layout/fragment_detail" />
 </navigation>

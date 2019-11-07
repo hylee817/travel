@@ -9,6 +9,8 @@ import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import com.techton.travel.R;
 import com.techton.travel.ui.detail.DetailFragment;
@@ -29,8 +31,8 @@ public class ResultFragment extends Fragment{
         resultBusan1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Fragment fragment = getActivity().getSupportFragmentManager().findFragmentById(R.id.container);
-                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.container,new DetailFragment()).addToBackStack(null).commit();
+                NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment);
+                navController.navigate(R.id.action_navigation_result_to_navigation_detail);
 
             }
         });

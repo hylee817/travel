@@ -1,5 +1,6 @@
 package com.techton.travel.ui.home;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,10 +15,13 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import com.techton.travel.Main2Activity;
 import com.techton.travel.R;
 import com.techton.travel.ui.search.SearchFragment;
+
+import static android.content.Context.MODE_PRIVATE;
 
 public class HomeFragment extends Fragment {
 
@@ -33,8 +37,8 @@ public class HomeFragment extends Fragment {
         searchButton.setOnClickListener(new ImageButton.OnClickListener(){
             @Override
             public void onClick(View v){
-                SearchFragment searchFragment = new SearchFragment();
-                getActivity().getSupportFragmentManager().beginTransaction().add(R.id.container,searchFragment).addToBackStack(null).commit();
+                NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment);
+                navController.navigate(R.id.action_navigation_home_to_navigation_search);
             }
         });
 
