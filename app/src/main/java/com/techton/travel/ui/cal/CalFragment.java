@@ -59,12 +59,15 @@ public class CalFragment extends Fragment implements OnMapReadyCallback {   //ap
         adapter = new CalAdapter(items);  //생성자로 어댑터에 리스트 부착
         layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL,false);
         recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(adapter);
 
         CalItemTouchHelperCallback callback = new CalItemTouchHelperCallback(adapter);
         ItemTouchHelper touchHelper = new ItemTouchHelper(callback);
         touchHelper.attachToRecyclerView(recyclerView);
         //구현한 callBack을 RecyclerView에 붙착.
+
+        recyclerView.setAdapter(adapter);
+        adapter.passTouchHelper(touchHelper);
+
 
         CalItem item1 = new CalItem("1",name1,address1);
         CalItem item2 = new CalItem("2",name2, address2);

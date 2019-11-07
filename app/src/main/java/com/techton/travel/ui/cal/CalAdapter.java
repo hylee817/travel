@@ -1,7 +1,9 @@
 package com.techton.travel.ui.cal;
 
+import android.content.Context;
 import android.media.Image;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -9,6 +11,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.view.MotionEventCompat;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -20,8 +23,24 @@ import java.util.Collections;
 
 ////////////////////////////////어댑터 코드//////////////////////////////////////
 public class CalAdapter extends RecyclerView.Adapter<ViewHolder>
-            implements CalItemTouchHelperCallback.ItemTouchHelperAdapter{
+            implements CalItemTouchHelperCallback.ItemTouchHelperAdapter {
     private ArrayList<CalItem> items;
+
+    /*/drag & drop
+    public interface OnStartDragListener {
+        void onStartDrag(ViewHolder holder);
+    }
+    private final Context context;
+    private final OnStartDragListener startDragListener;
+    public CalAdapter(Context c, OnStartDragListener o){
+        context = c;
+        startDragListener = o;
+    }
+    */
+    private ItemTouchHelper touchHelper;
+    public void passTouchHelper(ItemTouchHelper th) {
+        touchHelper = th;
+    }
 
     //생성자
     CalAdapter(ArrayList<CalItem> items){
@@ -59,6 +78,7 @@ public class CalAdapter extends RecyclerView.Adapter<ViewHolder>
         }
         notifyItemMoved(fromPosition, toPosition);
     }
+
     //swipe delete 코드
     @Override
     public void onItemDismiss(int position) {
@@ -80,9 +100,19 @@ public class CalAdapter extends RecyclerView.Adapter<ViewHolder>
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {//뷰홀더 객체가 재사용 될때
+    public void onBindViewHolder(final ViewHolder holder, int position) {//뷰홀더 객체가 재사용 될때
         CalItem item = items.get(position);
         holder.setItem(item);
+
+        holder.imageButton_move.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if(event.getActionMasked() == MotionEvent.ACTION_DOWN){
+                    touchHelper.startDrag(holder);
+                }
+                return false;
+            }
+        });
     }
 
     @Override

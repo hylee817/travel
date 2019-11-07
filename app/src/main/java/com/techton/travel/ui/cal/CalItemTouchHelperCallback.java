@@ -14,7 +14,7 @@ public class CalItemTouchHelperCallback extends ItemTouchHelper.Callback {
     }
     //변수 선언
     private final ItemTouchHelperAdapter mAdapter;
-    public CalItemTouchHelperCallback(ItemTouchHelperAdapter adapter) { //생성자로 받아옴
+    public CalItemTouchHelperCallback(ItemTouchHelperAdapter adapter) { //생성자로 어댑터 받아옴
         mAdapter = adapter;
     }
 
@@ -32,7 +32,6 @@ public class CalItemTouchHelperCallback extends ItemTouchHelper.Callback {
                           @NonNull RecyclerView.ViewHolder viewHolder,
                           @NonNull RecyclerView.ViewHolder target) {
         mAdapter.onItemMove(viewHolder.getAdapterPosition(),target.getAdapterPosition());
-        //이동할 아이템의 position, 이동한 위치를 알아냄
         return true;
     }
 
