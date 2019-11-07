@@ -38,10 +38,6 @@ public class NavFragment extends Fragment implements OnMapReadyCallback{
                 ViewModelProviders.of(this).get(NavViewModel.class);
         View root = inflater.inflate(R.layout.fragment_nav, container, false);
 
-        // 투명 상단바
-        getActivity().getWindow().getDecorView().setSystemUiVisibility(
-                View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
-
         locationSource = new FusedLocationSource(this, LOCATION_PERMISSION_REQUEST_CODE);
 
         // map 찾기
