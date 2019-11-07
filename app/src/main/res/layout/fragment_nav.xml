@@ -10,8 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/nav_top_banner"
-        android:background="#FFFFFF"
-        android:layout_marginTop="20dp"/>
+        android:background="@android:color/transparent"/>
 
     <FrameLayout
         android:layout_width="match_parent"
