@@ -26,18 +26,8 @@ public class CalAdapter extends RecyclerView.Adapter<ViewHolder>
             implements CalItemTouchHelperCallback.ItemTouchHelperAdapter {
     private ArrayList<CalItem> items;
 
-    /*/drag & drop
-    public interface OnStartDragListener {
-        void onStartDrag(ViewHolder holder);
-    }
-    private final Context context;
-    private final OnStartDragListener startDragListener;
-    public CalAdapter(Context c, OnStartDragListener o){
-        context = c;
-        startDragListener = o;
-    }
-    */
     private ItemTouchHelper touchHelper;
+    //CalFragment의 ItemTouchHelper 받아옴
     public void passTouchHelper(ItemTouchHelper th) {
         touchHelper = th;
     }
@@ -68,9 +58,10 @@ public class CalAdapter extends RecyclerView.Adapter<ViewHolder>
     //drag & drop 코드
     @Override
     public void onItemMove(int fromPosition, int toPosition) {
-        if(fromPosition < toPosition){      //drop 시점에만 말고 drag할때도 계속 움직이도록
+        //drag할때 나머지 item들도 움직이도록 함
+        if(fromPosition < toPosition){
             for (int i=fromPosition;i<toPosition;i++)
-                Collections.swap(items, i,i+1);
+                Collections.swap(items, i,i+1); //arraylist의 상위 클래스로 알아서 swap해줌
         } else{
             for (int i=fromPosition;i>toPosition;i--){
                 Collections.swap(items,i,i-1);
@@ -78,7 +69,6 @@ public class CalAdapter extends RecyclerView.Adapter<ViewHolder>
         }
         notifyItemMoved(fromPosition, toPosition);
     }
-
     //swipe delete 코드
     @Override
     public void onItemDismiss(int position) {
@@ -104,6 +94,7 @@ public class CalAdapter extends RecyclerView.Adapter<ViewHolder>
         CalItem item = items.get(position);
         holder.setItem(item);
 
+        //햄버거 버튼을 눌렀을때 drag가 시작되도록 해줌
         holder.imageButton_move.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -125,6 +116,10 @@ public class CalAdapter extends RecyclerView.Adapter<ViewHolder>
 
 
 
+
+
+
+
 ////////////////////뷰홀더 클래스 /////////////////////////
 class ViewHolder extends RecyclerView.ViewHolder {
     TextView    textView_order;
@@ -140,14 +135,6 @@ class ViewHolder extends RecyclerView.ViewHolder {
         textView_name       = itemView.findViewById(R.id.textView_name);
         textView_address    = itemView.findViewById(R.id.textView_location);
         imageButton_move    = itemView.findViewById(R.id.imageButton_move);
-
-            /*    아이템 재배치할때 누르는 버튼
-            imageButton_move.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-
-                }
-            }); */
     }
 
     //뷰홀더가 재사용될때 호출
