@@ -48,10 +48,10 @@
     </FrameLayout>
 
     <fragment
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
         android:id="@+id/map"
-        android:name="com.naver.maps.map.MapFragment" />
+        android:name="com.naver.maps.map.MapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="280dp" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -81,9 +81,10 @@
                     android:background="@android:color/transparent"
                     />
             </FrameLayout>
+
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="80dp"
                 android:background="#BCC5D3" />
         </LinearLayout>
     </ScrollView>

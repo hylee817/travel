@@ -14,11 +14,12 @@ public class CalItemTouchHelperCallback extends ItemTouchHelper.Callback {
     }
     //변수 선언
     private final ItemTouchHelperAdapter mAdapter;
-    public CalItemTouchHelperCallback(ItemTouchHelperAdapter adapter) { //생성자로 어댑터 받아옴
+    //생성자로 CalFragment의 어댑터 받아옴
+    public CalItemTouchHelperCallback(ItemTouchHelperAdapter adapter) {
         mAdapter = adapter;
     }
 
-
+    //callBack의 필수 함수들
     @Override
     public int getMovementFlags(@NonNull RecyclerView recyclerView,
                                 @NonNull RecyclerView.ViewHolder viewHolder) {
