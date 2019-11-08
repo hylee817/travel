@@ -45,6 +45,7 @@
                            android:layout_height="match_parent"
                            android:layout_weight="1"
                            android:background="@android:color/transparent"
+                           android:alpha="0.5"
                            android:src="@drawable/home_arrow_left"/>
 
                        <TextView
