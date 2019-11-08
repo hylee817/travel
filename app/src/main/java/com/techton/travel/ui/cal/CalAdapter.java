@@ -125,9 +125,6 @@ public class CalAdapter extends RecyclerView.Adapter<ViewHolder>
 
 
 
-
-
-
 ////////////////////뷰홀더 클래스 /////////////////////////
 class ViewHolder extends RecyclerView.ViewHolder {
     TextView    textView_order;
